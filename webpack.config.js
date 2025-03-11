@@ -18,20 +18,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "assets/style.css",
         }),
-        new ImageMinimizerPlugin({
-          test: /\.(png|jpe?g|gif|svg)$/i,
-          minimizer: {
-              implementation: ImageMinimizerPlugin.imageminMinify,
-              options: {
-                  plugins: [
-                      ["gifsicle", { interlaced: true }],
-                      ["jpegtran", { progressive: true }],
-                      ["optipng", { optimizationLevel: 5 }],
-                  ],
-              },
-          },
-      }),
-  ], 
+   ], 
     module: {
         rules: [
             {
@@ -65,25 +52,25 @@ module.exports = {
                 generator: {
                     filename: "images/[name][ext]",
                 },
-             },
+            },
           ],
     },
-optimization: {
-  minimizer: [
-      "...",
-      new ImageMinimizerPlugin({
-          test: /\.(png|jpe?g|gif|svg)$/i,
-          minimizer: {
-              implementation: ImageMinimizerPlugin.imageminMinify,
-              options: {
-                  plugins: [
-                      ["gifsicle", { interlaced: true }],
-                      ["jpegtran", { progressive: true }],
-                      ["optipng", { optimizationLevel: 5 }],
-                  ],
+    optimization: {
+      minimizer: [
+          "...",
+          new ImageMinimizerPlugin({
+              test: /\.(png|jpe?g|gif|svg)$/i,
+              minimizer: {
+                  implementation: ImageMinimizerPlugin.imageminMinify,
+                  options: {
+                      plugins: [
+                          ["gifsicle", { interlaced: true }],
+                          ["jpegtran", { progressive: true }],
+                          ["optipng", { optimizationLevel: 5 }],
+                      ],
+                  },
               },
-          },
-      }),
-  ],
-},
+          }),
+      ],
+  },
 };

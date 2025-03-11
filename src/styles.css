@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%; 
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    margin: 0;
+    }
+    
+.paw-1 {
+    z-index: -1;
+    }
+
+.inscription {
+    display: flex;
+    position: absolute;
+    padding-left: 76px;
+    padding-top: 103px;
+}
+
+.top {
+    display: flex;
+    align-items: flex-start;
+}
+
+.card-text {
+    display: flex;
+    align-items: start;
+    flex-flow: column;
+    width: 729px;
+    height: 468px;
+    padding-left: 212px;
+    margin-top: -190px;
+        }
+
+.icon-park{
+    width: 114px;
+    height: 100.32px;
+    margin-left: 846px;
+    margin-top: -45px;
+}
+
+.paw-central {
+position: absolute;
+margin-left: 890.88px;
+margin-top: -15px;
+z-index: -1;
+}
+
+.rectangles{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 716px;
+    margin-top: -740px;
+    position: relative;
+}
+
+.rectangle-two {
+    position: absolute;
+    top: 0;
+    left: 516px;
+}
+
+.rectangle-three {
+    position: absolute;
+    top: 430px;
+    left: 516px;
+   }
+
+.rectangle-four {
+    position: absolute; 
+    top: 490px;
+      }
+
+.location-icon {
+    position: absolute;
+    width: 83px;
+    height: 114px;
+    margin-left: 580px;
+    margin-top: -160px;
+}
+
+.paw-bottom{
+    position: absolute;
+    margin-left: 530px;
+    margin-top: -200px;
+    z-index: -1; 
+}

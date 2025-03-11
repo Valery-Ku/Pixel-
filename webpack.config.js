@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require('path'); 
 
 module.exports = {
@@ -17,7 +18,20 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "assets/style.css",
         }),
-    ],
+        new ImageMinimizerPlugin({
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          minimizer: {
+              implementation: ImageMinimizerPlugin.imageminMinify,
+              options: {
+                  plugins: [
+                      ["gifsicle", { interlaced: true }],
+                      ["jpegtran", { progressive: true }],
+                      ["optipng", { optimizationLevel: 5 }],
+                  ],
+              },
+          },
+      }),
+  ], 
     module: {
         rules: [
             {
@@ -50,8 +64,26 @@ module.exports = {
                 type: "asset/resource",
                 generator: {
                     filename: "images/[name][ext]",
-                }
-            },
-        ],
+                },
+             },
+          ],
     },
+optimization: {
+  minimizer: [
+      "...",
+      new ImageMinimizerPlugin({
+          test: /\.(png|jpe?g|gif|svg)$/i,
+          minimizer: {
+              implementation: ImageMinimizerPlugin.imageminMinify,
+              options: {
+                  plugins: [
+                      ["gifsicle", { interlaced: true }],
+                      ["jpegtran", { progressive: true }],
+                      ["optipng", { optimizationLevel: 5 }],
+                  ],
+              },
+          },
+      }),
+  ],
+},
 };

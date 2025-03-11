@@ -29,5 +29,8 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0",
     "webpack-plugin": "^1.0.5"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^10.1.1"
   }
 }

@@ -12,11 +12,19 @@ module.exports = {
     },
  plugins: [new HtmlWebpackPlugin({
     template: path.resolve(__dirname, "src", "index.html"),
- })],
+ }),
+ new MiniCssExtractPlugin({
+    filename: "style.css"
+ })
+],
  module: {
     rules: [
         {
             test: /\.html$/i,
             loader: "html-loader",
-        }]
+        },
+        {
+            test: /\.css$/i,
+            use: [MiniCssExtractPlugin.loader, "css-loader"],
+          },]
 }}

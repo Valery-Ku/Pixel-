@@ -8,14 +8,14 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, "build"),
         assetModuleFilename: 'assets/[name][ext]',
-        clean: true
+        clean: true,
     },
  plugins: [new HtmlWebpackPlugin({
     template: path.resolve(__dirname, "src", "index.html"),
  }),
  new MiniCssExtractPlugin({
-    filename: "style.css"
- })
+    filename: "assets/style.css",
+})
 ],
  module: {
     rules: [
